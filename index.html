@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Master Media Marketing - Video Marketing Agency</title>
+        <meta name="robots" content="noindex">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="shortcut icon" href="icons/favicon.png" />
+        <link href="style.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script>
+            function changeStatus(selector,property,status) {
+                document.querySelector(selector).style[property] = status;
+            }
+            function headOpen() {
+                changeStatus(".head","top","0px");
+                changeStatus(".menu","top","16px");
+            }
+            function headClose() {
+                changeStatus(".head","top","-60px");
+                changeStatus(".menu","top","-30px");
+            }
+            function navOpen() {
+                changeStatus(".nav","left","0%");
+                changeStatus(".nav-invisible","left","0%");
+                headClose()
+            }
+            function navClose() {
+                changeStatus(".nav","left","-60%");
+                changeStatus(".nav-invisible","left","-100%");
+                setTimeout(headOpen,1000)
+            }
+            function serviceOpen(theService) {
+                var serviceStatus;
+                if (theService == '') {
+                    serviceStatus = '';
+                } else {
+                    serviceStatus = document.querySelector(theService).style.display;
+                }
+                var services = ['#video-marketing','#smm','#advert'];
+                if (serviceStatus == "block") {
+                    changeStatus(theService,"display","none");
+                } else {
+                for (let i=0; i<services.length; i++) {
+                        if (services[i] == theService) {
+                            changeStatus(services[i],"display","block")
+                        } else {
+                            changeStatus(services[i],"display","none")
+                        }
+                    }
+                    headClose();
+                    setTimeout(headOpen,1500)
+                }
+            }
+            var prevIndex = 3;
+            var slideIndex = 2;
+            var nextIndex = 1;
+
+            function plusSlides(n) {
+            slideIndex += n;
+            prevIndex += n;
+            nextIndex += n;
+            showSlides();
+            }
+            var slides = document.getElementsByClassName("work");
+            function showSlides() {
+            var i;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+                } else if (slideIndex < 1) {
+                slideIndex = slides.length
+            }
+            if (prevIndex > slides.length) {
+                prevIndex = 1
+                } else if (prevIndex < 1) {
+                prevIndex = slides.length
+            }
+            if (nextIndex > slides.length) {
+                nextIndex = 1
+                } else if (nextIndex < 1) {
+                nextIndex = slides.length
+            }
+            function sliderStatus(a, b, c) {
+                slides[a-1].style.transform = "scale(0.7)";
+                slides[a-1].style.left = "-70%";
+                slides[a-1].style.zIndex = "1";
+                slides[a-1].style.opacity = ".7";
+                slides[b-1].style.transform = "scale(1)";
+                slides[b-1].style.left = "0";
+                slides[b-1].style.zIndex = "3";
+                slides[b-1].style.opacity = "1";
+                slides[c-1].style.transform = "scale(0.7)";
+                slides[c-1].style.left = "70%";
+                slides[c-1].style.zIndex = "1";
+                slides[c-1].style.opacity = ".7";
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.transform = "scale(0.4)";
+                slides[i].style.left = "0";
+                slides[i].style.zIndex = "1";
+            }
+            sliderStatus(prevIndex, slideIndex, nextIndex)
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="head">
+                <div class="container">
+                    <nav>
+                        <ul class="nav">
+                            <a class="btn scroll" href="#services" onclick="navClose(); serviceOpen('')">
+                                <li class="sections">
+                                    <div class="btn-group">
+                                        Services
+                                    </div>
+                                </li>
+                            </a>
+                            <a class="btn scroll" href="#portfolio" onclick="navClose(); serviceOpen('')">
+                                <li class="sections">
+                                    <div class="btn-group">
+                                        Portfolio
+                                    </div>
+                                </li>
+                            </a>
+                            <a class="btn scroll" href="#footer" onclick="navClose(); serviceOpen('')">
+                                <li class="sections">
+                                    <div class="btn-group">
+                                        About Us
+                                    </div>
+                                </li>
+                            </a>
+                            <a class="btn scroll" href="#footer" onclick="navClose(); serviceOpen('')">
+                                <li class="sections">
+                                    <div class="btn-group">
+                                        Contact
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                        <ul class="social">
+                                <li class="links">
+                                    <div>
+                                        <a  href="https://www.facebook.com/MasterMedia.am/" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our FaceBook Profile</title>
+                                                <defs/>
+                                                <g id="Symbols" stroke="none" stroke-width="1" fill="#ffffff" fill-rule="evenodd">
+                                                  <path d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M19.2159954,16.0991369 L19.5076763,13.2646585 L17.0126486,13.2646585 L17.0126486,11.5949227 C17.0126486,10.9686342 17.4265053,10.821583 17.7208279,10.821583 L19.5151609,10.821583 L19.5151609,8.06767467 L17.0421468,8.05732825 C14.2974842,8.05732825 13.6738374,10.1131836 13.6738374,11.426078 L13.6738374,13.2620169 L12.0859924,13.2620169 L12.0859924,16.0991369 L13.6738374,16.0991369 L13.6738374,24.1719847 L17.0124284,24.1719847 L17.0124284,16.0991369 L19.2159954,16.0991369 Z" id="Combined-Shape"/>
+                                                </g>
+                                              </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="links">
+                                    <div>
+                                        <a  href="https://www.youtube.com/channel/UCbwOIX42kc5B7MXqimWZBag" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our Youtube Channel</title>
+                                                <defs/>
+                                                <g id="Deposits" stroke="none" stroke-width="1" fill-rule="evenodd" fill="#ffffff">
+                                                  <path d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M24.242398,12.4298676 C24.242398,11.0885781 23.155795,10.0014348 21.815248,10.0014348 L10.427825,10.0014348 C9.087548,10.0014348 8.001148,11.0888482 8.001148,12.4298676 L8.001148,18.9417891 C8.001148,20.2830786 9.087751,21.3702219 10.427825,21.3702219 L21.815045,21.3702219 C23.155862,21.3702219 24.242195,20.2828085 24.242195,18.9417891 L24.242195,12.4298676 L24.242398,12.4298676 Z M14.497135,18.4329566 L14.497135,12.3167037 L19.135437,15.3749652 L14.497135,18.4329566 Z" id="Combined-Shape"/>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="links">
+                                    <div>
+                                        <a  href="https://www.linkedin.com/company/mastermediamarketing" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our LinkedIn Profile</title>
+                                                <defs/>
+                                                <g id="Deposits" stroke="none" stroke-width="1" fill-rule="evenodd" fill="#ffffff">
+                                                    <path xmlns="http://www.w3.org/2000/svg" d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M24.7436507,24 L24.7436507,17.8088004 C24.7436507,14.4934248 22.9731303,12.9504434 20.6115443,12.9504434 C18.7042329,12.9504434 17.8535051,13.9997992 17.3764765,14.7338129 L17.3526518,14.7691484 C17.3590765,14.7576376 17.3692488,14.7458591 17.3764765,14.7338129 L17.3764765,13.2039485 L13.7864481,13.2039485 C13.8346328,14.2166304 13.7864481,23.9997323 13.7864481,23.9997323 L17.3762088,23.9997323 L17.3762088,17.9702192 C17.3762088,17.6465786 17.4005688,17.3261502 17.4950644,17.095399 C17.7552618,16.4497239 18.3444537,15.7829011 19.3362556,15.7829011 C20.6359043,15.7829011 21.1541576,16.7733646 21.1541576,18.2237243 L21.1541576,24 L24.7436507,24 Z M8,9.86501589 C8,10.9015225 8.78005688,11.7308349 9.9841392,11.7308349 L10.0074285,11.7308349 C11.2594278,11.7308349 12.0378785,10.9015225 12.0378785,9.86501589 C12.0140539,8.80602309 11.2594278,8 10.0312531,8 C8.80334616,8 8,8.80602309 8,9.86501589 Z M8.21335118,24 L11.8017735,24 L11.8017735,13.2039485 L8.21335118,13.2039485 L8.21335118,24 Z" id="Combined-Shape"/>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="btn">
+                                        <div class="menu" onclick="navOpen()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="#ffffff" d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+                                        </div>
+                                    </a>
+                                </li>
+                        </ul>
+                        <div class="nav-invisible" onclick="navClose()">
+                            
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div id="logo-container">
+                <img src="icons/logo2.png" alt="Master Media Marketing logo animation" id="logo">
+                <h1 class="anim">Video Marketing Agency</h1>
+            </div>
+        </header>
+        <section class="white" id="services">
+            <div class="container">
+                <h2 class="section-header">Services</h2>
+                <div class="service-icons-group">
+                    <a class="flex" href="#video-marketing" onclick="serviceOpen('#video-marketing')">
+                    <div>
+                        <img src="icons/video-marketing.gif" alt="video marketing icon animation" class="service-icon">
+                        <h2 class="service-icon-name">Video Marketing</h2>
+                        <p class="service-description">
+                        Our videos will work great for 
+                        Social Media ads as the standards for these platforms are kept like the 
+                        size and the duration of the videos, etc.
+                        We do video shoots, explainer animations, app / website promotion animations, etc.
+                        </p><b>SEE MORE</b>
+                    </div>
+                    </a>
+                    <a class="flex" href="#smm" onclick="serviceOpen('#smm')">
+                    <div>
+                        <img src="icons/smm.gif" alt="social media marketing icon animation" class="service-icon">
+                        <h2 class="service-icon-name">Social Media Marketing</h2>
+                        <p class="service-description">
+                            We provide the proper presence of your brand at social networks, 
+                            create social media strategy, develop a plan of publications, content, 
+                            advertising. Make statistical analysis, explore the efficiency of the 
+                            spent budget, prepare reports.
+                        </p><b>SEE MORE</b>
+                    </div>
+                    </a>
+                    <a class="flex" href="#advert" onclick="serviceOpen('#advert')">
+                    <div >
+                        <img src="icons/advertising.gif" alt="advertising icon animation" class="service-icon">
+                        <h2 class="service-icon-name">Advertising</h2>
+                        <p class="service-description">
+                            Our years of experience running campaigns for various products 
+                            and services at different placements will guarantee the most optimized ads for your business, 
+                            spending less money and getting tangible results.
+                        </p><b>SEE MORE</b>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="video-marketing" class="service-page">
+            <div class="container">
+                <h2 class="section-header">Video Marketing</h2>
+                <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/videosizes.png" class="description-image">
+                        <img src="img/videosizes.gif" class="icon-example size">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>2D Animation</h3>
+                        <div>
+                            We create attractive animation stories, cover videos, posts, corresponding to social media standarts,
+                            which will grow the efficiency and the engagement of the video and will obtain more viewers and
+                            potential customers. This type of animations can also be adapted for video banners in the city, malls, 
+                            WiFi ads and other places... 
+                        </div>
+                    </div>
+                </div>
+                <div class="service-section even">
+                    <div class="service-section-description flex">
+                        <h3>Video Shoot</h3>
+                        <div>
+                            Our creative team writes down the script and the storyboard of your message. 
+                            Plan the date, the time and the place of the shoot. Prepare proffesional equipments like the camera, voice recorders, lights, etc.
+                            Our professionals being aware of the lighting and the angles to make the video look good,
+                            will be responsible for getting the most eye-catching scenes of your work on it!
+                        </div>
+                    </div>
+                    <div class="description-image-div flex">
+                        <svg id="camera" class="description-image svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.33 376.29"><defs><style>.cls-1{fill:#fff; text-shadow: 1px 1px rgba(0,0,0,0.5);}.cls-2{fill:#fefefe;}</style></defs><title>Asset 2</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="body"><path class="cls-1 path1" d="M245.29,321.78C239.17,339,233,356.11,227,373.32c-.8,2.3-1.87,3-4.26,3-6.95-.17-13.9-.06-21.3-.06,6.69-18.78,13.26-37.22,19.82-55.65.73-.8,1.71-.7,2.64-.71,6.28,0,12.56,0,18.84,0C243.9,319.91,245.76,319.38,245.29,321.78Z"/><path class="cls-1 path2" d="M320.1,320.43q9.58,26.74,19.2,53.5c.68,1.87.32,2.38-1.65,2.36-6.64-.09-13.28-.08-19.92,0a2.43,2.43,0,0,1-2.76-1.87q-9.47-27-19-53.89a2.46,2.46,0,0,1,1.75-.6C305.16,320,312.65,319.5,320.1,320.43Z"/><path class="cls-1 path3" d="M116.81,248.82q0-33.72,0-67.45c0-1.24.24-2.55-.58-3.68a7.1,7.1,0,0,0-3.52-2q-46.21-16.9-92.39-33.91c-2.69-1-3.54-.3-4.63,2a167.72,167.72,0,0,0,.51,142.81c.71,1.49,1.36,2,3.07,1.34q48.41-17.82,96.85-35.53C117.11,251.38,116.81,250.05,116.81,248.82Zm-93.36,24q-22.14-59.06.67-117.92A373.15,373.15,0,0,0,23.45,272.79Z"/><path class="cls-1 path4" d="M376.62,178c0-1.91-.3-2.81-2.56-2.8q-73.49.09-146.95,0c-2.18,0-2.64.76-2.6,2.74.1,6.23.17,12.46,0,18.68-.09,2.69.77,3.29,3.35,3.28,24.18-.1,48.35-.06,72.53-.06s48.56-.05,72.84.08c2.89,0,3.54-.84,3.45-3.56C376.45,190.27,376.54,184.14,376.62,178Z"/><path class="cls-1 path5" d="M419.31,162.09c0-11.73-8.21-19.92-19.9-19.93H139.07c-11.87,0-17,8.18-17.12,20.07,0,5.16-.1,10.33-.14,15.49l0,74.78c0,5.07,0,10.13.1,15.2.15,11.27,5.5,19.56,16.72,19.61,3.7,0,7.41.15,11.09-.05a7.87,7.87,0,0,1,6.17,2.34,96.33,96.33,0,0,0,58.54,25.09l111.21-.12c18.51-1.81,35.72-7.62,49.89-19.65,7.31-6.2,14.55-8.17,23.66-7.75,11.86.55,20.07-8,20.07-20Q419.34,214.65,419.31,162.09ZM155,260.87c-5.68,0-5.69.09-5.69-5.62,0-9.68.07-19.37-.05-29.06,0-2.29.5-3.11,2.94-3.06,5.35.11,5.35,0,5.35,5.32V242c0,5.37-.07,10.75,0,16.12C157.6,260.13,157.12,260.88,155,260.87Zm30.79,0c-5.95.14-5.94.21-5.94-5.72,0-9.61.08-19.21-.06-28.82,0-2.49.67-3.28,3.18-3.18,6.11.23,5-.63,5.1,5,.07,4.65,0,9.29,0,13.93,0,5.49-.06,11,0,16.47C188.12,260.25,187.57,260.82,185.76,260.86Zm30,0c-5.15-.16-5.16,0-5.16-5.22V241.73c0-5.28.07-10.55,0-15.83,0-2,.42-2.81,2.59-2.75,7,.18,5.6-.69,5.66,5.69.09,9.6-.05,19.21.08,28.81C218.88,260.08,218.3,261,215.72,260.88Zm171.17-53.52c0,2.22-.63,2.84-2.84,2.83q-83.49-.08-167,0c-2.36,0-3-.64-3-3,.1-13,.13-26,0-39,0-2.69.79-3.32,3.38-3.31,27.67.09,55.34.06,83,.06s55.34,0,83-.07c2.8,0,3.51.7,3.47,3.49C386.75,181.38,386.79,194.37,386.89,207.36Z"/><polygon class="cls-1 path6" points="221.56 8.51 236.8 16.43 289.45 32.51 291.46 29.52 221.93 8.51 221.56 8.51"/><polygon class="cls-1 path7" points="229.18 125.82 233.39 122.63 289.01 104.58 291.31 107.86 221.56 130.21 229.18 125.82"/></g><path class="cls-2 path8" d="M198.58,3.89A65.21,65.21,0,1,0,263.79,69.1,65.21,65.21,0,0,0,198.58,3.89Zm-17.5,5c11.86-3.14,23.71-3.54,35.56,0,1.09.33,2.28.45,3.14,1.34l-4,11.35c-2.42,6.82-4.9,13.61-7.22,20.45-.64,1.88-1.18,2.78-3.5,2.07a21.24,21.24,0,0,0-12.16,0c-1.59.45-2.44.38-3.06-1.42-3.53-10.35-7.11-20.69-10.86-31C178.09,9.35,180.05,9.65,181.08,8.94Zm-6.19,65.93c.51,1.78.07,2.4-1.58,2.9-2.1.63-4.12,1.53-6.18,2.32l-23,8.09s-4.33.86-5.64-1.72c-3.64-10.2-4.28-26.63-.31-34.75,1.41-2.46,2.42-4.06,6.68-2.53,9.47,3.34,18.94,6.71,28.42,10,1.53.54,2.16,1.06,1.61,2.9A22.33,22.33,0,0,0,174.89,74.87Zm42.35,54c-10.24,3.53-26.68,4-34.75-.05-2.45-1.44-4-2.47-2.46-6.71,3.44-9.44,6.91-18.87,10.31-28.32.55-1.52,1.08-2.15,2.91-1.57A22.33,22.33,0,0,0,206,92.4c1.79-.49,2.41,0,2.88,1.61.61,2.11,1.5,4.14,2.26,6.2L219,123.27S219.83,127.61,217.24,128.9ZM199.13,90.57a22,22,0,1,1,22-22A22,22,0,0,1,199.13,90.57ZM255,88.33c-9.91-3.58-19.87-7-29.83-10.46-1.6-.55-2.44-1-1.82-3.07a22,22,0,0,0,0-12.8c-.5-1.67,0-2.24,1.41-2.74,10.26-3.56,20.5-7.12,30.73-10.76,1.64-.59,2.64-.23,2.91,1.44a60,60,0,0,1,.14,36.67A2.58,2.58,0,0,1,255,88.33Z"/><path class="cls-2 path 9" d="M198.84,0a69,69,0,1,0,69,69A69,69,0,0,0,198.84,0Zm-.26,136.62A67.44,67.44,0,1,1,266,69.19,67.43,67.43,0,0,1,198.58,136.62Z"/><circle class="cls-1 path10" cx="199.13" cy="68.68" r="17.64"/><path class="cls-1 path11" d="M342.35,3.89A65.21,65.21,0,1,0,407.56,69.1,65.21,65.21,0,0,0,342.35,3.89Zm-17.5,5C336.7,5.8,348.56,5.4,360.41,9c1.09.33,2.28.45,3.13,1.34l-4,11.35c-2.41,6.82-4.89,13.61-7.21,20.45-.64,1.88-1.18,2.78-3.5,2.07a21.24,21.24,0,0,0-12.16,0c-1.59.45-2.44.38-3.06-1.42-3.53-10.35-7.11-20.69-10.87-31C321.86,9.35,323.82,9.65,324.85,8.94Zm-6.19,65.93c.51,1.78.06,2.4-1.58,2.9-2.1.63-4.12,1.53-6.18,2.32l-23,8.09s-4.33.86-5.64-1.72c-3.64-10.2-4.28-26.63-.32-34.75,1.42-2.46,2.43-4.06,6.69-2.53,9.47,3.34,18.93,6.71,28.42,10,1.53.54,2.16,1.06,1.6,2.9A22.33,22.33,0,0,0,318.66,74.87Zm42.35,54c-10.24,3.53-26.68,4-34.75-.05-2.45-1.44-4-2.47-2.46-6.71,3.44-9.44,6.91-18.87,10.31-28.32.55-1.52,1.08-2.15,2.91-1.57a22.33,22.33,0,0,0,12.78.15c1.78-.49,2.41,0,2.88,1.61.61,2.11,1.49,4.14,2.26,6.2l7.85,23.06S363.6,127.61,361,128.9ZM342.9,90.57a22,22,0,1,1,22-22A22,22,0,0,1,342.9,90.57Zm55.86-2.24c-9.91-3.58-19.87-7-29.83-10.46-1.61-.55-2.44-1-1.82-3.07a22,22,0,0,0,0-12.8c-.5-1.67,0-2.24,1.41-2.74,10.25-3.56,20.5-7.12,30.72-10.76,1.65-.59,2.65-.23,2.92,1.44a60,60,0,0,1,.14,36.67A2.58,2.58,0,0,1,398.76,88.33Z"/><path class="cls-1 path12" d="M344.87,0a69,69,0,1,0,66.74,66.74A69,69,0,0,0,344.87,0Zm-.32,136.54a67.43,67.43,0,1,1,65.19-65.19A67.44,67.44,0,0,1,344.55,136.58Z"/><circle class="cls-1" cx="342.9" cy="68.68" r="17.64"/></g></g></svg>
+                    </div>
+                </div>
+                <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/animicons.png" class="description-image">
+                        <img src="img/hashv.gif" class="icon-example">
+                        <img src="img/kadr.gif" class="icon-example">
+                        <img src="img/irav.gif" class="icon-example">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>Animated Icons. SVG, GIF, APNG etc.</h3>
+                        <div>
+                            Icons are the first things people see visiting your page or website.
+                            The impact of imagery only increases
+                            with the help of animation.
+                            Usually eyes inately concentrate first
+                            on moving objects, and animation is
+                            likely eye candy - catchy and call
+                            attention to.
+                        </div>
+                    </div>
+                </div>
+                <div class="service-section even">
+                    <div class="service-section-description flex">
+                        <h3>HTML Animation</h3>
+                        <div>
+                            Web animations attract attention,
+engage and communicate people
+more clearly and efficiently. 
+ It can engage and hold people’s 
+attention longer than just a static web page.
+                        </div>
+                    </div>
+                    <div class="description-image-div flex">
+                        <img src="img/html.png" class="description-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="smm" class="service-page">
+            <div class="container">
+                <h2 class="section-header">Social Media Marketing</h2>
+                <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/report.png" class="description-image">
+                        <img src="img/posts.gif" class="icon-example">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>Pubilcations</h3>
+                        <div>
+                            After the topic is confirmed we create the content. Compose the text and design a picture reflecting the post's message.
+                            The design can be a frame to adjust to different photos or a style in which the other publications will be, making 
+                            proper editions each time.
+                        </div>
+                    </div>
+                </div>
+                <div class="service-section even">
+                    <div class="service-section-description flex">
+                        <h3>Video Animations</h3>
+                        <div>
+                            We create attractive animation stories, cover videos, posts, corresponding to social media standarts,
+                            which will grow the efficiency and the engagement of the video and will obtain more viewers and
+                            potential customers.
+                        </div>
+                    </div>
+                    <div class="description-image-div flex">
+                        <img src="img/videosizes.png" class="description-image">
+                        <img src="img/videosizes.gif" id="smmgif" class="icon-example size">
+                    </div>
+                </div>
+                <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/ads.png" class="description-image">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>Advertising</h3>
+                        <div>
+                            In result of properly targeted advertising campaigns, we guarantee your budget's most optimal consumption․
+                            We cultivate advertising strategy, distribute your budget among most performable publications, promote 
+                            the growth of target audience.
+                        </div>
+                    </div>
+                </div>
+                <div class="service-section even">
+                    <div class="service-section-description flex">
+                        <h3>Planning and Reporting</h3>
+                        <div>
+                            We are planning the topic and the timetable of publications, budget, advertising campaigns, summarize the results,
+                            do statistical data-driven analysis and make decisions and offers based on it.
+                        </div>
+                    </div>
+                    <div class="description-image-div flex">
+                        <img src="img/report.png" class="description-image">
+                    </div>
+                </div>
+                <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/shooting.png" class="description-image">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>Photo Shoot</h3>
+                        <div>
+                            Organizing professional photo shoots, image processing. We do both product photography and situational,
+                            territorial photography. Product photography can take place both at you and at us - at photo studio.
+                        </div>
+                    </div>
+                </div>
+            </div>         
+        </section>
+
+        <section id="advert" class="service-page">
+            <h2 class="section-header">Advertising</h2>
+            <div class="service-section">
+                    <div class="description-image-div flex">
+                        <img src="img/adsmanager.png" class="description-image">
+                    </div>
+                    <div class="service-section-description flex">
+                        <h3>Digital Platform Ads</h3>
+                        <div>
+                            It's very important always to be in the spotlight of your customers. Don't let them forget about you.
+                            We create and manage ads using powerful ad management tools, target the most appropriate audience for your business, 
+                            tracking how well your campaigns are performing. Eventually we summarize the results, make decisions and offers based on it.
+                        </div>
+                    </div>
+            </div>
+            <div class="service-section even">
+                    <div class="service-section-description flex">
+                        <h3>TV Advertisement</h3>
+                        <div>
+                            TV Commercials attract more attention, create more positive emotions and is stronger from the term of long memorabilty. 
+                            We will assist you choosing the right placement like the TV Channel, time period, the programm at which your video should be, 
+                            which is very important because the type of programm decides who watches your commercial.
+                        </div>
+                    </div>
+                    <div class="description-image-div flex">
+                        <svg id="tv" class="description-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 369.76 440.33"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M369.68,232.34c0-18.15-4.36-35.2-14.52-50.37C338.41,157,315,142.69,284.8,141.1c-17.43-.92-35-.4-52.43-.4-2.81,0-4.6.05-4.91-3.78-.38-4.61-3.06-8.52-6.28-11.94-3.79-4-8.43-6.76-13.43-9.22a17.1,17.1,0,0,1,.77-1.62c9.73-15,19.49-30,29.15-45,1.1-1.71,2.39-2,4.23-2.09a13.29,13.29,0,0,0,12.5-10,13.45,13.45,0,0,0-21.35-13.94,12.85,12.85,0,0,0-4.1,15.4,4.87,4.87,0,0,1-.43,5.11Q213.39,86.77,198.38,110c-1.29,2-2.5,2.44-4.85,2a48.23,48.23,0,0,0-16.69,0c-3.19.56-4.44-.59-6-3q-27-41.82-54.21-83.5c-2.09-3.17-3.47-5.82-2.09-10,2.26-7-3.07-14.16-10.45-15.4A13,13,0,0,0,89.36,10.77c-1.18,7.61,3.77,14.51,11.12,15a6.47,6.47,0,0,1,5.73,3.39Q133,70.59,159.92,112c.76,1.18,1.46,2.41,2.25,3.72-1.22.67-2.22,1.13-3.22,1.67-8.1,4.36-14.91,10.08-16.56,19.58-.65,3.69-2.12,3.76-4.94,3.76q-22.14-.07-44.28,0a102.87,102.87,0,0,0-20.5,1.76c-42.65,8.82-72,44.7-72.45,89q-.44,49,0,98c.35,40.4,25.64,74.74,63.26,86.22,3.56,1.09,4.71,2.58,4.32,6.18a41.31,41.31,0,0,0,.29,9.43c.41,3.39.87,6.9,4.18,9l2.58,0c6.53-2.29,10.21-7.76,13.58-13.14,2.94-4.69,6.45-6.31,11.94-6.31q83.26.38,166.54-.05c7.18,0,12.11,1.56,15.79,8.09,2.75,4.89,6.44,9.52,12.3,11.41h2.59a8.4,8.4,0,0,0,3.56-5.61,49.43,49.43,0,0,0,.89-14.1c-.13-2.55.55-3.67,3.12-4.48,39.52-12.44,64.34-46.08,64.52-87.5C369.81,296.54,369.75,264.44,369.68,232.34ZM278.78,347c0,13.48-6.82,20.26-20.33,20.26H64.18c-13.44,0-20.31-6.88-20.31-20.34V213.68c0-13.42,6.87-20.24,20.39-20.24H258.53q20.25,0,20.25,20.32Zm37.29-11.31a20.82,20.82,0,0,1,.88-41.63h.2a20.82,20.82,0,0,1-1.08,41.63ZM337.34,234a20.83,20.83,0,1,1,0-.57C337.35,233.59,337.34,233.78,337.34,234Z"/></g></g></svg>
+                    </div>
+            </div>
+            
+
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+            <h2 class="section-header">Our works</h2>
+            <div class="slider">
+                <div class="work" id="work1">
+                        <iframe src="https://www.youtube.com/embed/146rY-YEsUk" frameborder="10" 
+                            allow="" 
+                            allowfullscreen>
+                        </iframe>
+                </div>
+                <div class="work" id="work2" >
+                        <iframe  frameborder="10" src="https://www.youtube.com/embed/Q1lbbRSPyOY"
+                            allow="" 
+                            allowfullscreen>
+                        </iframe>
+                </div>
+                <div class="work" id="work3">
+                        <iframe src="https://www.youtube.com/embed/N_lxm387DBw" frameborder="10" 
+                            allow="" 
+                            allowfullscreen>
+                        </iframe>
+                </div>
+                <div class="work">
+                        <iframe src="https://www.youtube.com/embed/ZC4iKIy0LKk" frameborder="10" 
+                            allow="" 
+                            allowfullscreen>
+                        </iframe>
+                </div>
+                <div class="work">
+                        <iframe src="https://www.youtube.com/embed/-lzmQSz5xZU" frameborder="10" 
+                            allow="" 
+                            allowfullscreen>
+                        </iframe>
+                </div>
+                <a class="prev" onclick="plusSlides(1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(-1)">&#10095;</a>
+            </div>
+            </div>
+            <a style="align-content: center;" href="https://www.youtube.com/channel/UCbwOIX42kc5B7MXqimWZBag">See more on our Youtube Channel</a>
+        </section>
+        <section id="footer">
+            <div class="container">
+                <div class="footer-group">
+                    
+                    <div class="flex footer-flex">
+                        <h2 class="service-icon-name">Contact</h2><br>
+                        <p class="service-description">
+                            <i class="fas fa-phone"></i> +374 99 11 11 77 <br><br> <i class="fa fa-envelope"></i> marketing@mastermedia.am<br><br> <i class="fa fa-location-arrow"></i> - Yerevan, Armenia
+                        </p>
+                    </div>
+                    <div class="flex footer-flex">
+                        <h2 class="service-icon-name">About Us</h2><br>
+                        <p class="service-description">
+                            We are a result driven, video industry focused marketing agency. We use leading development 
+                            platforms, engaging animations and a deep understanding of our customers 
+                            key objectives to deliver premium results which both our agency and clients are 
+                            extremely proud of.
+                        </p>
+                    </div>
+                    <div class="flex footer-flex">
+                        <h2 class="service-icon-name">Find Us on</h2>
+                        <p class="service-description">
+                            <ul class="social-footer">
+                                <li class="links-footer">
+                                    <div>
+                                        <a href="https://www.facebook.com/MasterMedia.am/" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our FaceBook Profile</title>
+                                                <defs/>
+                                                <g id="Symbols" stroke="none" stroke-width="1" fill="#f7a846" fill-rule="evenodd">
+                                                  <path d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M19.2159954,16.0991369 L19.5076763,13.2646585 L17.0126486,13.2646585 L17.0126486,11.5949227 C17.0126486,10.9686342 17.4265053,10.821583 17.7208279,10.821583 L19.5151609,10.821583 L19.5151609,8.06767467 L17.0421468,8.05732825 C14.2974842,8.05732825 13.6738374,10.1131836 13.6738374,11.426078 L13.6738374,13.2620169 L12.0859924,13.2620169 L12.0859924,16.0991369 L13.6738374,16.0991369 L13.6738374,24.1719847 L17.0124284,24.1719847 L17.0124284,16.0991369 L19.2159954,16.0991369 Z" id="Combined-Shape"/>
+                                                </g>
+                                              </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="links-footer">
+                                    <div>
+                                        <a  href="https://www.youtube.com/channel/UCbwOIX42kc5B7MXqimWZBag" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our Youtube Channel</title>
+                                                <defs/>
+                                                <g id="Deposits" stroke="none" stroke-width="1" fill-rule="evenodd" fill="#f7a846">
+                                                  <path d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M24.242398,12.4298676 C24.242398,11.0885781 23.155795,10.0014348 21.815248,10.0014348 L10.427825,10.0014348 C9.087548,10.0014348 8.001148,11.0888482 8.001148,12.4298676 L8.001148,18.9417891 C8.001148,20.2830786 9.087751,21.3702219 10.427825,21.3702219 L21.815045,21.3702219 C23.155862,21.3702219 24.242195,20.2828085 24.242195,18.9417891 L24.242195,12.4298676 L24.242398,12.4298676 Z M14.497135,18.4329566 L14.497135,12.3167037 L19.135437,15.3749652 L14.497135,18.4329566 Z" id="Combined-Shape"/>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="links-footer">
+                                    <div>
+                                        <a  href="https://www.linkedin.com/company/mastermediamarketing" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="35px" viewBox="0 0 32 32" version="1.1">
+                                                <!-- Generator: sketchtool 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+                                                <title>Our LinkedIn Profile</title>
+                                                <defs/>
+                                                <g id="Deposits" stroke="none" stroke-width="1" fill-rule="evenodd" fill="#f7a846">
+                                                    <path xmlns="http://www.w3.org/2000/svg" d="M16,32 C7.163444,32 0,24.836556 0,16 C0,7.163444 7.163444,0 16,0 C24.836556,0 32,7.163444 32,16 C32,24.836556 24.836556,32 16,32 Z M24.7436507,24 L24.7436507,17.8088004 C24.7436507,14.4934248 22.9731303,12.9504434 20.6115443,12.9504434 C18.7042329,12.9504434 17.8535051,13.9997992 17.3764765,14.7338129 L17.3526518,14.7691484 C17.3590765,14.7576376 17.3692488,14.7458591 17.3764765,14.7338129 L17.3764765,13.2039485 L13.7864481,13.2039485 C13.8346328,14.2166304 13.7864481,23.9997323 13.7864481,23.9997323 L17.3762088,23.9997323 L17.3762088,17.9702192 C17.3762088,17.6465786 17.4005688,17.3261502 17.4950644,17.095399 C17.7552618,16.4497239 18.3444537,15.7829011 19.3362556,15.7829011 C20.6359043,15.7829011 21.1541576,16.7733646 21.1541576,18.2237243 L21.1541576,24 L24.7436507,24 Z M8,9.86501589 C8,10.9015225 8.78005688,11.7308349 9.9841392,11.7308349 L10.0074285,11.7308349 C11.2594278,11.7308349 12.0378785,10.9015225 12.0378785,9.86501589 C12.0140539,8.80602309 11.2594278,8 10.0312531,8 C8.80334616,8 8,8.80602309 8,9.86501589 Z M8.21335118,24 L11.8017735,24 L11.8017735,13.2039485 L8.21335118,13.2039485 L8.21335118,24 Z" id="Combined-Shape"/>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>
